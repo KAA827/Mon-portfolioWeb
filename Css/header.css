@@ -20,7 +20,7 @@ nav > ul{
 nav ul li a{
    text-decoration: none;
    font-weight: 300;
-    color: red;
+    color: #342E37;
 }
 nav ul li a:hover{
     color: #3c91e663;
@@ -52,3 +52,4 @@ ion-icon{
     color: #342E37;
 
 }
+
