@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Horloge en temps réel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #138A36, #3C91E6);
+      font-family: 'Lato', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(255,255,255,0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    #horloge {
+      font-size: 42px;
+      font-weight: bold;
+      color: #fff;
+      background: none;
+      border: none;
+      text-align: center;
+      width: 200px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Horloge en temps réel</h2>
+    <input type="text" id="horloge" readonly>
+  </div>
+
+  <script>
+    function afficherHeure() {
+      const maintenant = new Date();
+
+      let heures = maintenant.getHours();
+      let minutes = maintenant.getMinutes();
+      let secondes = maintenant.getSeconds();
+
+      if (heures < 10) heures = "0" + heures;
+      if (minutes < 10) minutes = "0" + minutes;
+      if (secondes < 10) secondes = "0" + secondes;
+
+      const heureActuelle = heures + ":" + minutes + ":" + secondes;
+      document.getElementById("horloge").value = heureActuelle;
+
+      setTimeout(afficherHeure, 1000);
+    }
+
+    afficherHeure();
+  </script>
+</body>
+</html>
