@@ -15,12 +15,12 @@ nav > ul{
     justify-content: space-between;
     width: 40%;
     list-style-type: none;
-    color: #342E37;
 }
 
 nav ul li a{
    text-decoration: none;
    font-weight: 300;
+    color: red;
 }
 nav ul li a:hover{
     color: #3c91e663;
@@ -50,4 +50,5 @@ nav ul li a:hover{
 }
 ion-icon{
     color: #342E37;
+
 }
